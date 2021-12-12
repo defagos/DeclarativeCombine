@@ -10,7 +10,7 @@ import SwiftUI
 struct DeclarativeCombineExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Homepage()
         }
     }
 }
