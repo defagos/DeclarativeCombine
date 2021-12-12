@@ -11,6 +11,8 @@
 		6F6A6A9127668D8100541314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F6A6A8C27668D8100541314 /* Assets.xcassets */; };
 		6F6A6A9227668D8100541314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6A6A8E27668D8100541314 /* ContentView.swift */; };
 		6F6A6A9327668D8100541314 /* DeclarativeCombineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6A6A8F27668D8100541314 /* DeclarativeCombineExampleApp.swift */; };
+		6FC9B8F8276694D90023A32A /* DeclarativeCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 6FC9B8F7276694D90023A32A /* DeclarativeCombine */; };
+		6FC9B8FA276694F20023A32A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC9B8F9276694F20023A32A /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		6F6A6A8C27668D8100541314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F6A6A8E27668D8100541314 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6F6A6A8F27668D8100541314 /* DeclarativeCombineExampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeCombineExampleApp.swift; sourceTree = "<group>"; };
+		6FC9B8F5276694C80023A32A /* DeclarativeCombine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DeclarativeCombine; sourceTree = "<group>"; };
+		6FC9B8F9276694F20023A32A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		6FDE4FB827668CD6001AD4B2 /* DeclarativeCombineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeclarativeCombineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -26,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FC9B8F8276694D90023A32A /* DeclarativeCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +57,28 @@
 			isa = PBXGroup;
 			children = (
 				6F6A6A8E27668D8100541314 /* ContentView.swift */,
+				6FC9B8F9276694F20023A32A /* DataSource.swift */,
 				6F6A6A8F27668D8100541314 /* DeclarativeCombineExampleApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		6FC9B8F6276694D90023A32A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6FDE4FAF27668CD6001AD4B2 = {
 			isa = PBXGroup;
 			children = (
+				6FC9B8F5276694C80023A32A /* DeclarativeCombine */,
 				6F6A6A8D27668D8100541314 /* Sources */,
 				6F6A6A8B27668D8100541314 /* Resources */,
 				6F6A6A8927668D8100541314 /* Preview Content */,
 				6FDE4FB927668CD6001AD4B2 /* Products */,
+				6FC9B8F6276694D90023A32A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +106,9 @@
 			dependencies = (
 			);
 			name = DeclarativeCombineExample;
+			packageProductDependencies = (
+				6FC9B8F7276694D90023A32A /* DeclarativeCombine */,
+			);
 			productName = DeclarativeCombineExample;
 			productReference = 6FDE4FB827668CD6001AD4B2 /* DeclarativeCombineExample.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FC9B8FA276694F20023A32A /* DataSource.swift in Sources */,
 				6F6A6A9227668D8100541314 /* ContentView.swift in Sources */,
 				6F6A6A9327668D8100541314 /* DeclarativeCombineExampleApp.swift in Sources */,
 			);
@@ -349,6 +368,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6FC9B8F7276694D90023A32A /* DeclarativeCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeclarativeCombine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6FDE4FB027668CD6001AD4B2 /* Project object */;
 }
