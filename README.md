@@ -21,4 +21,4 @@ The package is compatible with iOS 13 and above. The example project runs on iOS
 
 ## License
 
-See the [LICENSE](../LICENSE) file for more information.
+See the [LICENSE](LICENSE) file for more information.
