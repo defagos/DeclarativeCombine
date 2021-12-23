@@ -38,15 +38,15 @@ public enum DataSource {
     
     static func topics() -> AnyPublisher<[Topic], Error> {
         return URLSession.shared.dataTaskPublisher(for: url(forResourcePath: "topicList/tv"))
-            .map { $0.data }
+            .map(\.data)
             .decode(type: TopicList.self, decoder: JSONDecoder())
-            .map { $0.topicList }
+            .map(\.topicList)
             .eraseToAnyPublisher()
     }
     
     static func medias(forTopicId topicId: String, paginatedBy paginator: Trigger.Signal? = nil) -> AnyPublisher<[Media], Error> {
         return medias(forTopicId: topicId, at: nil, paginatedBy: paginator)
-            .map { $0.mediaList }
+            .map(\.mediaList)
             .eraseToAnyPublisher()
     }
     
@@ -62,7 +62,7 @@ private extension DataSource {
     
     static func medias(forTopicId topicId: String, at page: Page?) -> AnyPublisher<MediaPage, Error> {
         return URLSession.shared.dataTaskPublisher(for: page ?? url(forResourcePath: "mediaList/video/latestByTopic/\(topicId)"))
-            .map { $0.data }
+            .map(\.data)
             .decode(type: MediaPage.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
