@@ -40,7 +40,7 @@ public extension Publishers {
      *  Accumulate the latest values emitted by several publishers into an array. All the publishers must emit a
      *  value before `AccumulateLatestMany` emits a value, as for `CombineLatest`.
      */
-    static func AccumulateLatestMany<Output, Failure>(_ publishers: AnyPublisher<Output, Failure>...) -> AnyPublisher<[Output], Failure> {
+    static func AccumulateLatestMany<Upstream>(_ publishers: Upstream...) -> AnyPublisher<[Upstream.Output], Upstream.Failure> where Upstream: Publisher {
         return AccumulateLatestMany(publishers)
     }
     
@@ -48,12 +48,12 @@ public extension Publishers {
      *  Accumulate the latest values emitted by a sequence of publishers into an array. All the publishers must
      *  emit a value before `AccumulateLatestMany` emits a value, as for `CombineLatest`.
      */
-    static func AccumulateLatestMany<S, Output, Failure>(_ publishers: S) -> AnyPublisher<[Output], Failure> where S: Swift.Sequence, S.Element == AnyPublisher<Output, Failure> {
+    static func AccumulateLatestMany<Upstream, S>(_ publishers: S) -> AnyPublisher<[Upstream.Output], Upstream.Failure> where Upstream: Publisher, S: Swift.Sequence, S.Element == Upstream {
         let publishersArray = Array(publishers)
         switch publishersArray.count {
         case 0:
             return Just([])
-                .setFailureType(to: Failure.self)
+                .setFailureType(to: Upstream.Failure.self)
                 .eraseToAnyPublisher()
         case 1:
             return publishersArray[0]

@@ -27,7 +27,6 @@ final class HomepageViewModel: ObservableObject {
                             }
                             .replaceError(with: Self.placeholderRow(for: topic, state: self?.state))
                             .prepend(Self.placeholderRow(for: topic, state: self?.state))
-                            .eraseToAnyPublisher()
                     })
                 }
                 .switchToLatest()
